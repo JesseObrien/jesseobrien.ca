@@ -1,0 +1,88 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$disable-warnings: true;
+
+html, body {
+    background: #222A3F;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    @include outer-container;
+}
+
+.me-box {
+    @include span-columns(6);
+    @include shift(3);
+    margin-top: 2em;
+    background: #efefef;
+    text-align: center;
+
+    .name {
+        font-size: 1.75em;
+        margin-bottom: 0;
+    }
+
+    .title {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        font-size: 1em;
+        font-weight: normal;
+    }
+
+    .avatar {
+        margin: 1em;
+        border-radius: 50%;
+    }
+
+    .writeup {
+        background: #667d9e;
+        color: white;
+        padding: 1em;
+        margin: 0;
+    }
+
+    .vehikl {
+        color: #e26701;
+    }
+
+    .twelve {
+        @include span-columns(12);
+    }
+
+    .four {
+        @include span-columns(4);
+
+        &.end {
+            @include omega();
+        }
+
+        a {
+            transition: all 0.15s ease-in-out;
+            width: 100%;
+            display: block;
+            height: 2em;
+            line-height: 2em;
+            background: #677A9f;
+            font-size: 1em;
+            color: white;
+
+            &:hover {
+                background: #75869e;
+                font-weight: bold;
+                margin-top: -5px;
+                @include prefixer(box-shadow, 0px 3px 3px rgba(0,0,0,0.23), webkit moz spec);
+            }
+        }
+    }
+
+}
+
