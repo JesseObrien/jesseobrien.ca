@@ -1,6 +1,7 @@
 .sass-cache/
 .DS_Store
 dist/*
+bindata_assetfs.go
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
