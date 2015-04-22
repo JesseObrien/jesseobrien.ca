@@ -2,14 +2,9 @@
 
 ### Development 
 
-    `bundle install`
-
-#### Sass
-
-    `sass --watch stylesheets/app.scss:public/assets/css/app.css --style compressed`
+    `make development`
 
 ### Build
 
-    `run build.sh`
-    `commit binary`
+    `make install`
 
