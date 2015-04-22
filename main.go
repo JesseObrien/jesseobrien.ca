@@ -20,13 +20,18 @@ func init() {
 func main() {
 	mux := http.NewServeMux()
 
-	r := render.New(render.Options{})
+	r := render.New(render.Options{
+		Asset:      Asset,
+		AssetNames: AssetNames,
+	})
 
 	mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
 		r.HTML(w, http.StatusOK, "index", nil)
 	})
 
-	n := negroni.Classic()
+	n := negroni.New(negroni.NewRecovery(), negroni.NewLogger(), negroni.NewStatic(assetFS()))
+
 	n.UseHandler(mux)
+
 	n.Run(httpAddress + ":" + httpPort)
 }
