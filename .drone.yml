@@ -1,0 +1,12 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: golang
+  commands:
+    - make build
+
+when:
+  branch:
+    master
